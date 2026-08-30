@@ -33,7 +33,7 @@ public class InventoryTest extends BaseTest {
         // Create a group warehouse
         // Parent warehouse = Meow - DPL
         inventoryPage.addWarehouse(
-        "Meow 1234 Warehouse",
+        "Meow 9825Warehouse",
         true,
         "All Warehouses - DPL"
 );

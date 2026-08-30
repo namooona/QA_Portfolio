@@ -35,13 +35,13 @@ public class SupplierTest extends BaseTest {
         SupplierPage supplierPage = new SupplierPage(driver);
 
         supplierPage.addSupplier(
-                "Meowsii Hardware Supplier",
-                "Hardware",
+                "Meowsii Supplier",
+                "Electrical",
                 "VAT12345",
                 "Meow Kumari",
-                "mkumari@example.com",
-                "9827435281",
-                "014825234",
+                "Meowsikumari@example.com",
+                "9827435223",
+                "014825256",
                 "cat street, Kathmandu",
                 "Bagmati",
                 "Kathmandu"
