@@ -7,7 +7,8 @@
             <class name="tests.CustomerTest"/>
             <class name="tests.InventoryTest"/>
             <class name="tests.SupplierTest"/> -->
-            <class name="tests.UsersTest"/>
+            <!-- <class name="tests.UsersTest"/> -->
+            <class name="tests.TasksTest"/>
         </classes>
     </test>
 </suite>
