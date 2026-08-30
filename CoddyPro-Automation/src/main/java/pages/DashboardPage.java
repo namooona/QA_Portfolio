@@ -12,15 +12,78 @@ public class DashboardPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    private By customersLink = By.cssSelector("a[href='/clients']");
+    // Customers link
+    private By customersLink = By.cssSelector(
+            "a[href='/clients']"
+    );
+
+    // Inventory dropdown button
+    // We target the button that contains the chevron-down SVG.
+    private By inventoryDropdown = By.xpath(
+            "//*[@id='root']/div[1]/div[2]/aside/div/div[3]/nav/div[5]/button"
+    );
+
+    // Inventory link inside the dropdown
+    private By inventoryLink = By.cssSelector(
+            "a[href='/inventory']"
+    );
+
 
     public DashboardPage(WebDriver driver) {
+
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // Explicit wait of 10 seconds
+        this.wait = new WebDriverWait(
+                driver,
+                Duration.ofSeconds(10)
+        );
     }
 
+
+    // =========================================================
+    // CUSTOMERS
+    // =========================================================
+
     public void goToCustomers() {
-        wait.until(ExpectedConditions.elementToBeClickable(customersLink)).click();
-        wait.until(ExpectedConditions.urlContains("/clients"));
+
+        // Click Customers
+        wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        customersLink
+                )
+        ).click();
+
+        // Verify Customers page opened
+        wait.until(
+                ExpectedConditions.urlContains("/clients")
+        );
+    }
+
+
+    // =========================================================
+    // INVENTORY
+    // =========================================================
+
+    public void goToInventory() {
+
+        // Step 1: Open Inventory dropdown
+        wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        inventoryDropdown
+                )
+        ).click();
+
+        // Step 2: Click Inventory
+        wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        inventoryLink
+                )
+        ).click();
+
+        // Step 3: Verify Inventory page opened
+        wait.until(
+                ExpectedConditions.urlContains("/inventory")
+        );
     }
 }
